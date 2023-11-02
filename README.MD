@@ -1,0 +1,1 @@
+pip install scrapy_fake_useragent
