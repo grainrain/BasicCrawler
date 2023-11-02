@@ -115,3 +115,11 @@ FEED_EXPORT_ENCODING = "utf-8"
 COOKIES_ENABLES = False
 HTTPERROR_ALLOWED_CODES = [403]
 COMPRESSION_ENABLED = False
+
+
+
+SPLASH_URL = 'http://192.168.59.103:8050'
+DOWNLOADER_MIDDLEWARES = {
+    'scrapyjs.SplashMiddleware': 725,
+}
+DUPEFILTER_CLASS = 'scrapyjs.SplashAwareDupeFilter'

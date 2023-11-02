@@ -1,0 +1,2 @@
+pip install scrapy_fake_useragent
+pip install scrapy-splash
