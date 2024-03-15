@@ -1,10 +1,11 @@
 import scrapy
 
+from BasicCrawler.items import BasiccrawlerItem
+
 
 class BasiccrawlerspiderSpider(scrapy.Spider):
     name = "BasicCrawlerSpider"
     allowed_domains = ["zaobao.com"]
-
     # start_urls = ["https://www.zaobao.com/realtime/china"]
 
     def start_requests(self):
@@ -25,13 +26,17 @@ class BasiccrawlerspiderSpider(scrapy.Spider):
             print(title, '/', url)
         pass
 
-
         print(20 * "-", '新闻列表', 20 * "-")
         news_list = response.xpath("//div[@id='main-container']/div[contains(@class,'float-lg-left')]//a")
         for news in news_list:
+            item = BasiccrawlerItem()
             title = news.xpath("./div[@class='flex-1']/div[1]/text()").extract_first()
             publish_date = news.xpath("./div[@class='flex-1']/div[2]/text()").extract_first()
             url = news.xpath("./@href").extract_first()
             url = response.urljoin(url)
+            item['title'] = title
+            item['publish_date'] = publish_date
+            item['url'] = url
             print(title, '/', publish_date, '/', url)
+            yield item
         pass

@@ -9,4 +9,7 @@ import scrapy
 class BasiccrawlerItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
+    title = scrapy.Field()
+    publish_date = scrapy.Field()
+    url = scrapy.Field()
     pass

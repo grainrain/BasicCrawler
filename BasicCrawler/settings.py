@@ -84,6 +84,10 @@ USER_AGENT = 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_8; en-us) AppleWebK
 #ITEM_PIPELINES = {
 #    "BasicCrawler.pipelines.BasiccrawlerPipeline": 300,
 #}
+#
+# ITEM_PIPELINES = {
+#    "BasicCrawler.pipelines.CsvPipeline": 300,
+# }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
